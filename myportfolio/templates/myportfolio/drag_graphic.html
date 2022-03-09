@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/0.7.7/chartjs-plugin-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-dragdata@0.3.1/dist/chartjs-plugin-dragData.min.js"></script>
+
+</head>
+<body>
+<canvas id="chartJSContainer" style="height: 500px; width: 100%;"></canvas>
+    <script>
+var options = {
+  type: 'line',
+  data: {
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1,
+        pointHitRadius: 25
+      },
+      {
+        label: '# of Points',
+        data: [7, 11, 5, 8, 3, 7],
+        borderWidth: 1,
+        pointHitRadius: 25
+      }
+    ]
+  },
+  options: {
+    dragData: true,
+    onDragStart: function(e) {
+      // console.log(e)
+    },
+    onDrag: function(e, datasetIndex, index, value) {
+      // console.log(datasetIndex, index, value)
+    },
+    onDragEnd: function(e, datasetIndex, index, value) {
+      // console.log(datasetIndex, index, value)
+    },
+    plugins: {
+      zoom: {
+        pan: {
+          enabled: true,
+          mode: function() {
+           if (eventOutsideDataPoint) {
+             return 'xy';
+           }
+           return ''
+			    }
+        },
+        zoom: {
+          enabled: true,
+          mode: 'xy'
+        }
+      }
+    }
+  }
+}
+
+var ctx = document.getElementById('chartJSContainer').getContext('2d');
+var eventOutsideDataPoint = true
+
+document.getElementById('chartJSContainer').onmousemove = function(evt) {
+  var activePoints = window.test.getElementsAtEvent(evt);
+  eventOutsideDataPoint = activePoints && activePoints.length ? false : true
+};
+
+window.test = new Chart(ctx, options);
+
+    </script>
+</body>
+</html>
