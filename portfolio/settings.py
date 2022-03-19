@@ -76,14 +76,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
-    }
-}
 
 
 #postgres://avixkyyrvhcrjp:91fcf33b22cf6a4cd6dd1c06c1aa49bae8bcfd8815c34cc52d941339a0498af5@ec2-3-211-149-196.compute-1.amazonaws.com:5432/df99c95p1tsk7c
@@ -142,6 +134,16 @@ STATICFILES_DIRS = (
 )
 #django_heroku.settings(locals())
 # ie if Heroku server
-#if 'DATABASE_URL' in os.environ:
-#    import dj_database_url
-#    DATABASES = {'default': dj_database_url.config()}
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
+    DATABASES = {'default': dj_database_url.config()}
+else:
+    # Database
+    # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',
+        }
+    }
+
