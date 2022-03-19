@@ -12,23 +12,29 @@
 
 <div class="col-md-8 offset-md-2">
     <h1>My projects</h1>
-<div class="card-group">
-
   {% for project in projects %}
-  <div class="row">
-  <div class="col-sm-6">
-    <div class="card" style="width: 25rem;">
-        {% static "" as baseUrl %}
-      <img class="card-img-top" src="{{ baseUrl }}img/{{project.image_path}}">
+<div class="card mb-3" >
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      {% static "" as baseUrl %}
+      <img src="{{ baseUrl }}img/{{project.image_path}}" class="card-img">
+    </div>
+    <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{project.title}}</h5>
         <p class="card-text">{{project.description}}</p>
+        <div class="project-tech justify-content-left">
+          <img src={{project.tech_stack_1}}>
+          <img src={{project.tech_stack_2}}>
+          <img src={{project.tech_stack_3}}>
+          <img src={{project.tech_stack_4}}>
+        </div>
         <a href={{project.github_link}} class="btn btn-primary" target="_blank">View code</a>
       </div>
     </div>
   </div>
 </div>
-  {% endfor %}
-</div >
+{% endfor %}
+
 </div >
 {% endblock %}

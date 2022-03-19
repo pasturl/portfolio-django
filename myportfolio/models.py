@@ -10,8 +10,13 @@ class Project(models.Model):
     title = models.CharField(max_length=500)
     description = models.CharField(max_length=2000)
     github_link = models.CharField(max_length=2000)
-    tech_stack = models.CharField(max_length=500)
-    image = models.FilePathField(path=os.path.join(settings.BASE_DIR, "myportfolio/static/img"), default="")
+    keywords =models.CharField(max_length=1000, default="")
+    image = models.CharField(max_length=1000)
+    tech_stack_1 =models.CharField(max_length=1000, default="")
+    tech_stack_2 =models.CharField(max_length=1000, default="")
+    tech_stack_3 =models.CharField(max_length=1000, default="")
+    tech_stack_4 =models.CharField(max_length=1000, default="")
+
 
     @property
     def image_path(self):

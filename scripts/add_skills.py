@@ -16,8 +16,6 @@ b = models.Skill(name='Tensorflow',
                  image='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original-wordmark.svg')
 b.save()
 
-
-
 b = models.Skill(name='Docker',
                  image='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg')
 b.save()
