@@ -136,7 +136,8 @@ django_heroku.settings(locals())
 # ie if Heroku server
 if 'DATABASE_URL' in os.environ:
     DATABASES = {'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2'
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'db.postgresql',
         }}
 else:
     # Database
