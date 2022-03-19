@@ -135,7 +135,9 @@ STATICFILES_DIRS = (
 django_heroku.settings(locals())
 # ie if Heroku server
 if 'DATABASE_URL' in os.environ:
-    DATABASES = {'ENGINE': 'django.db.backends.postgresql_psycopg2'}
+    DATABASES = {'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2'
+        }}
 else:
     # Database
     # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
