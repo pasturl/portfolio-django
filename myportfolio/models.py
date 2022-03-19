@@ -76,7 +76,6 @@ class Profile(models.Model):
     designation = models.CharField(max_length=500)
     summary = models.CharField(max_length=5000)
     image = models.CharField(max_length=5000)
-    phone_number = models.CharField(max_length=100)
     email = models.EmailField()
     github_link = models.URLField()
     linkedin_link = models.URLField()
