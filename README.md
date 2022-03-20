@@ -12,4 +12,5 @@ python manage.py shell < scripts/add_profile.py
 python manage.py shell < scripts/add_experience.py
 python manage.py shell < scripts/add_projects.py
 python manage.py shell < scripts/add_skills.py
+python manage.py shell < scripts/add_areas.py
 ```

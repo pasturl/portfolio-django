@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, Context
-from .models import Project, Blog, Skill, Connection,Experience,Profile
+from .models import Project, Blog, Skill, Connection,Experience,Profile,Area
 # Create your views here.
 from .forms import NameForm
 from django.core.mail import send_mail
@@ -11,11 +11,11 @@ MAX_EXPERIENCE = 6
 def index(request):
     template = loader.get_template("myportfolio/index.html")
     projects = Project.objects.all()
-    skills = Skill.objects.all()
     experiences = Experience.objects.all().order_by('-start_date')[:MAX_EXPERIENCE]
     profile = Profile.objects.all().first()
+    areas = Area.objects.all()
     form = NameForm()
-    context = {'projects': projects, 'skills': skills, 'form': form,'experiences':experiences,'profile':profile}
+    context = {'projects': projects, 'form': form,'experiences':experiences,'profile':profile,'areas':areas}
     return HttpResponse(template.render(context, request))
 
 
@@ -58,4 +58,12 @@ def projects(request):
     template = loader.get_template("myportfolio/projects.html")
     projects = Project.objects.all()
     context = {'projects': projects}
+    return HttpResponse(template.render(context, request))
+
+
+def resume(request):
+    template = loader.get_template("myportfolio/resume.html")
+    skills = Skill.objects.all()
+    experiences = Experience.objects.all().order_by('-start_date')[:MAX_EXPERIENCE]
+    context = {'skills': skills, 'experiences': experiences}
     return HttpResponse(template.render(context, request))

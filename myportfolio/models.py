@@ -61,6 +61,16 @@ class Skill(models.Model):
         return self.name
 
 
+class Area(models.Model):
+
+    name = models.CharField(max_length=50)
+    description = models.CharField(max_length=2000)
+    image = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.name
+
+
 class Connection(models.Model):
     your_name = models.CharField(max_length=100)
     email = models.EmailField()

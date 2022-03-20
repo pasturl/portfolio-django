@@ -2,27 +2,22 @@
 
 {% block page_content %}
 {% load static %}
-<style>
-    .card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-}
-</style>
+<link rel="stylesheet" href="{%  static  'css/style.css'  %}">
+
 
 <div class="col-md-8 offset-md-2">
     <h1>My projects</h1>
   {% for project in projects %}
-<div class="card mb-3" >
+<div class="card mb-3" id="card-horizontal">
   <div class="row no-gutters">
     <div class="col-md-4">
       {% static "" as baseUrl %}
-      <img src="{{ baseUrl }}img/{{project.image_path}}" class="card-img">
+      <img src="{{ baseUrl }}img/{{project.image_path}}" class="card-img" id="card-img-horizontal">
     </div>
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">{{project.title}}</h5>
-        <p class="card-text">{{project.description}}</p>
+        <p class="card-text" id="card-text-horizontal">{{project.description}}</p>
         <div class="project-tech justify-content-left">
           <img src={{project.tech_stack_1}}>
           <img src={{project.tech_stack_2}}>
