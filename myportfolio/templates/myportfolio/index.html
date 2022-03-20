@@ -23,7 +23,7 @@
                         <div class="card text-center border-0 justify-content-center" id="card-areas">
                             {% static "" as baseUrl %}
                             <div><img class="card-img-top text-center" id="card-img-icon" src="{{ baseUrl }}img/{{area.image}}"></div>
-                            <h5 class="card-title">{{area.name}}</h5>
+                            <h5 class="card-title" id="card-title-areas">{{area.name}}</h5>
                             <p class="card-text">{{area.description}}</p>
                         </div>
                     </div>
