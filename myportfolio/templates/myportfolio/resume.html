@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+{% load static %}
+<link rel="stylesheet" href="{%  static  'css/style.css'  %}">
+
+<div class="col-md-10 offset-md-1">
+
+    <div>
+        <h3 id="skill-header">My Skills</h3>
+        </div>
+            <div class="skills">
+            {% for skill in skills %}
+            <div class="skill">
+                <img id="skill-image" title={{skill.name}}  src={{skill.image}} alt={{skill.name}} class="skill-data">
+            </div>
+            {% endfor %}
+
+    </div>
+
+    <h3 align="center" class="resume-title">Professional Experience</h3>
+
+    <section id="resume" class="resume">
+     <div class="col-lg-6">
+                {% for exp in experiences %}
+                <div class="resume-item">
+                  <h4>{{exp.designation}}</h4>
+                      {% if exp.is_present %}
+                        <h5>{{exp.start_date}} - present</h5>
+                    {% else %}
+                        <h5>{{exp.start_date}} - {{exp.end_date}}</h5>
+                    {% endif %}
+
+                  <p><em>{{exp.company}}, {{exp.location}} </em></p>
+                  <ul>
+                      {% if exp.responsibilities_1 is not None %}
+                        <li>{{exp.responsibilities_1}}</li>
+                      {% endif %}
+                      {% if exp.responsibilities_2 %}
+                        <li>{{exp.responsibilities_2}}</li>
+                      {% endif %}
+                      {% if exp.responsibilities_3 %}
+                        <li>{{exp.responsibilities_3}}</li>
+                      {% endif %}
+                      {% if exp.responsibilities_4 %}
+                        <li>{{exp.responsibilities_4}}</li>
+                      {% endif %}
+
+
+
+                  </ul>
+                </div>
+                {% endfor %}
+
+              </div>
+
+    </section>
+</div>
+{% endblock %}

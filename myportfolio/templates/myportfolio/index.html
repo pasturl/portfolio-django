@@ -8,107 +8,59 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="col-md-8 offset-md-2">
-
-<div class ="profile">
-    <div class="container-img-profile">
-        <img class="profile-img"  src="static/img/{{profile.image}}" data-holder-rendered="true"  alt="tall image">
-    </div>
-
-    <div class="profile-info">
-        <h3 class ="name">Hey I'm {{profile.name}}</h3>
-        <h6 class="job-position mb-2 text-muted">{{ profile.designation}}</h6>
-        <p class="summary">{{profile.summary}}</p>
-        </section>
-    </div>
-
-</div>
-
-
-
-<div>
-<h3 id="skill-header">My Skills</h3>
-</div>
-    <div class="skills">
-    {% for skill in skills %}
-    <div class="skill">
-        <img id="skill-image" title={{skill.name}}  src={{skill.image}} alt={{skill.name}} class="skill-data">
-    </div>
-    {% endfor %}
-
-</div>
-
-
-
-
-<div>
-<h3 id="project-header">My Projects</h3>
-</div>
-
-<div class="card-group">
-
-  {% for project in projects %}
-  <div class="row">
-  <div class="col-sm-6">
-    <div class="card" style="width: 25rem;">
-        {% static "" as baseUrl %}
-      <img class="card-img-top" src="{{ baseUrl }}img/{{project.image_path}}">
-      <div class="card-body">
-        <h5 class="card-title">{{project.title}}</h5>
-        <p class="card-text">{{project.description}}</p>
-        <a href={{project.github_link}} class="btn btn-primary" target="_blank">View code</a>
-      </div>
-    </div>
-  </div>
-</div>
-  {% endfor %}
-</div >
-
-
-<h3 align="center" class="resume-title">Professional Experience</h3>
-
-<section id="resume" class="resume">
- <div class="col-lg-6">
-            {% for exp in experiences %}
-            <div class="resume-item">
-              <h4>{{exp.designation}}</h4>
-                  {% if exp.is_present %}
-                    <h5>{{exp.start_date}} - present</h5>
-                {% else %}
-                    <h5>{{exp.start_date}} - {{exp.end_date}}</h5>
-                {% endif %}
-
-              <p><em>{{exp.company}}, {{exp.location}} </em></p>
-              <ul>
-                  {% if exp.responsibilities_1 is not None %}
-                    <li>{{exp.responsibilities_1}}</li>
-                  {% endif %}
-                  {% if exp.responsibilities_2 %}
-                    <li>{{exp.responsibilities_2}}</li>
-                  {% endif %}
-                  {% if exp.responsibilities_3 %}
-                    <li>{{exp.responsibilities_3}}</li>
-                  {% endif %}
-                  {% if exp.responsibilities_4 %}
-                    <li>{{exp.responsibilities_4}}</li>
-                  {% endif %}
-
-
-
-              </ul>
+<div class="col-md-10 offset-md-1">
+    <div class ="profile">
+        <div class="d-flex flex-column justify-content-center" id="profile-info">
+            <h3 id="profile-name">{{profile.name}}</h3>
+            <h6 class="job-position">{{ profile.designation}}</h6>
+            <p id="summary">{{profile.summary}}</p>
+            </section>
+        </div>
+        <div id ="areas">
+            <div class="row justify-content-center">
+                {% for area in areas %}
+                    <div class="col-sm-3">
+                        <div class="card text-center border-0 justify-content-center" id="card-areas">
+                            {% static "" as baseUrl %}
+                            <div><img class="card-img-top text-center" id="card-img-icon" src="{{ baseUrl }}img/{{area.image}}"></div>
+                            <h5 class="card-title">{{area.name}}</h5>
+                            <p class="card-text">{{area.description}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+        </div>
+    </div>
 
+
+
+
+    <div>
+    <h3 id="project-header">My Projects</h3>
+    </div>
+
+    <div class="card-deck">
+
+      {% for project in projects %}
+      <div class="row">
+          <div class="col-sm-6">
+            <div class="card" id="card-vertical">
+              {% static "" as baseUrl %}
+              <img class="card-img-top" id="card-img-project" src="{{ baseUrl }}img/{{project.image_path}}">
+              <div class="card-body">
+                  <h5 class="card-title" id="card-title-vertical">{{project.title}}</h5>
+                  <p class="card-text" id="card-text-vertical">{{project.description}}</p>
+                  <a href={{project.github_link}} class="btn btn-primary" target="_blank">View code</a>
+              </div>
+            </div>
           </div>
-
-</section>
-
-<hr>
-
+      </div>
+      {% endfor %}
+    </div >
 
 </div>
 <footer class="footer-area section-gap">
-    <h3 class="footer-text" align="center">Connect with me </h3>
+    <h3 class="footer-text" align="center">CONTACT </h3>
     <div class="footer-social d-flex justify-content-center align-items-center">
         <a href={{profile.github_link}} class="github"><i class="fa fa-github"></i></a>
         <a href={{profile.linkedin_link}} class="linkedin"><i class="fa fa-linkedin"></i></a>

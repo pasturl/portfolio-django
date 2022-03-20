@@ -4,10 +4,8 @@ body {
 }
 
 .topnav {
-
   overflow: hidden;
   background-color: #212529;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
 
 }
@@ -31,35 +29,40 @@ body {
   color: white;
 }
 
+
 .blackiconcolor {color:white;}
 
 
 .profile{
-  display: grid;
-  grid-template-columns: 20% 80%;
-
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-.profile-info{
-    margin-top: 5%;
-    float: left;
-    horizontal-align: left;
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    <!-- font-weight: 700;-->
+#profile-info{
+    margin-top: 2em;
+    float: center;
+    horizontal-align: center;
     color: #000000;
-    font-color: green;
 }
 
-.name {
+#profile-name {
     font-size:2vw;
+    font-weight: bold;
 }
 
 .job-position {
-    font-size:1vw;
+    font-size:2vw;
+    color:#1269C7;
+    font-weight: bold;
 }
 
-.summary {
-    font-size:1vw;
+#summary {
+    font-size:1em;
+    margin-top: 2em;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 3em;
 }
 
 body
@@ -68,7 +71,8 @@ body
 }
 
 #project-header,#skill-header {
-  text-align: center;
+    margin-top: 1em;
+    text-align: center;
 
 }
 
@@ -187,9 +191,9 @@ width:120px;
   border: 2px solid #0563bb;
 }
 
-.card-img-top {
+#card-img-project {
     width: 100%;
-    height: 15vw;
+    height: 15em;
     object-fit: cover;
 }
 
@@ -198,23 +202,29 @@ width:120px;
   width: 33%; /* Equal width (5 icons with 20% width each = 100%) */
   font-size: 24px;
 }
+#areas{
+    align-items: center;
+}
+#card-areas{
+}
 
+#card-img-icon{
+    justify-content: center;
+    width: 10em;
+    height: 10em;
+}
 
-.card-group {
+.card-deck {
   justify-content: center;
+  padding-bottom: 3em;
 }
 
-.row {
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-top: 40px;
-}
-
-name.{
-    align-text: left;
+#profile-name{
+    align-text: center;
 }
 .footer-area {
   background-color: #04091e;
+  padding-top: 3em;
 }
 
 .footer-text{
@@ -258,11 +268,28 @@ name.{
     width: 100%;
     height: 25%;
     margin-top: 1em;
+    margin-bottom: 1em;
 }
 .project-tech img{
     width: 3em;
     height: 3em;
 }
-.btn{
-    margin-top: 2em;
+
+#card-vertical{
+    width: 20rem;
+    height: 30rem;
+    margin: 1em;
+}
+#card-title-vertical{
+    height: 3rem
+}
+#card-text-vertical{
+    height: 5rem
+}
+#card-img-horizontal{
+    width: 100%;
+    height: 100%;
+}
+#card-text-horizontal{
+    height: 5rem
 }
