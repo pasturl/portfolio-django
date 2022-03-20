@@ -5,6 +5,7 @@
 pip install -r requirements.txt
 python manage.py makemigrations myportfolio
 python manage.py migrate
+python manage.py inspectdb 
 python manage.py createsuperuser
 python manage.py runserver
 python manage.py shell
