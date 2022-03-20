@@ -47,12 +47,12 @@ body {
 }
 
 #profile-name {
-    font-size:2vw;
+    font-size:2em;
     font-weight: bold;
 }
 
 .job-position {
-    font-size:2vw;
+    font-size:2em;
     color:#1269C7;
     font-weight: bold;
 }
