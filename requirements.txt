@@ -19,3 +19,4 @@ wincertstore==0.2
 dj-database-url
 psycopg2
 django-heroku
+pandas

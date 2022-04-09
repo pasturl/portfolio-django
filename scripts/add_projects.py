@@ -34,3 +34,24 @@ b = models.Project(title='Sentiment analysis',
                    image='wordcloud_sentiment.png')
 b.save()
 
+b = models.Project(title='Dashboard Covid data',
+                   description='Process covid data and prepare a dashboard using plotly and streamlit.',
+                   github_link='https://github.com/pasturl/covid-map',
+                   keywords='Time series; Visualization; Maps; Geospacial data',
+                   tech_stack_1='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg',
+                   tech_stack_2='https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/z3ahdkytzwi1jxlpazje',
+                   tech_stack_3='https://upload.wikimedia.org/wikipedia/commons/8/8a/Plotly_logo_for_digital_final_%286%29.png',
+                   tech_stack_4='https://cdn-icons-png.flaticon.com/512/149/149442.png',
+                   image='covid_app.jpg')
+b.save()
+
+b = models.Project(title='Melanoma BRAF mutation prediction',
+                   description='Use clinical and histopatologic.',
+                   github_link='https://github.com/pasturl/covid-map',
+                   keywords='Time series; Visualization; Maps; Geospacial data',
+                   tech_stack_1='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg',
+                   tech_stack_2='https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/z3ahdkytzwi1jxlpazje',
+                   tech_stack_3='https://upload.wikimedia.org/wikipedia/commons/8/8a/Plotly_logo_for_digital_final_%286%29.png',
+                   tech_stack_4='https://cdn-icons-png.flaticon.com/512/149/149442.png',
+                   image='covid_app.jpg')
+b.save()

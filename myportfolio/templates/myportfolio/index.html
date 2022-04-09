@@ -7,7 +7,6 @@
 {% load static %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <div class="col-md-10 offset-md-1">
     <div class ="profile">
         <div class="d-flex flex-column justify-content-center" id="profile-info">
@@ -19,7 +18,7 @@
         <div id ="areas">
             <div class="row justify-content-center">
                 {% for area in areas %}
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <div class="card text-center border-0 justify-content-center" id="card-areas">
                             {% static "" as baseUrl %}
                             <div><img class="card-img-top text-center" id="card-img-icon" src="{{ baseUrl }}img/{{area.image}}"></div>
@@ -42,8 +41,7 @@
     <div class="card-deck">
 
       {% for project in projects %}
-      <div class="row">
-          <div class="col-sm-6">
+      <div class="row" id="row-card-vertical">
             <div class="card" id="card-vertical">
               {% static "" as baseUrl %}
               <img class="card-img-top" id="card-img-project" src="{{ baseUrl }}img/{{project.image_path}}">
@@ -53,19 +51,19 @@
                   <a href={{project.github_link}} class="btn btn-primary" target="_blank">View code</a>
               </div>
             </div>
-          </div>
+
       </div>
       {% endfor %}
     </div >
 
 </div>
-<footer class="footer-area section-gap">
+<footer class="footer-area section-gap" id="contact">
     <h3 class="footer-text" align="center">CONTACT </h3>
     <div class="footer-social d-flex justify-content-center align-items-center">
-        <a href={{profile.github_link}} class="github"><i class="fa fa-github"></i></a>
-        <a href={{profile.linkedin_link}} class="linkedin"><i class="fa fa-linkedin"></i></a>
-        <a href=mailto:{{profile.email}} class="gmail"><i class="fa fa-envelope"></i></a>
+        <a href={{profile.github_link}} class="github"><i class="fa fa-github" style="font-size:2em"></i></a>
+        <a href={{profile.linkedin_link}} class="linkedin"><i class="fa fa-linkedin" style="font-size:2em"></i></a>
+        <a href=mailto:{{profile.email}} class="gmail"><i class="fa fa-envelope" style="font-size:2em"></i></a>
     </div>
-</footer>
+  </footer>
 
  {% endblock %}

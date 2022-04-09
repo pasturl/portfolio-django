@@ -20,9 +20,10 @@
                     {% endif %}
 
                   <p><em>{{exp.company}}, {{exp.location}} </em></p>
+                    <a href={{exp.company_url}} class="btn btn-primary" target="_blank">View web</a>
                   <ul>
                       {% if exp.responsibilities_1 is not None %}
-                        <li>{{exp.responsibilities_1}}</li>
+                        <li  style="padding-top:2em">{{exp.responsibilities_1}}</li>
                       {% endif %}
                       {% if exp.responsibilities_2 %}
                         <li>{{exp.responsibilities_2}}</li>
@@ -32,6 +33,45 @@
                       {% endif %}
                       {% if exp.responsibilities_4 %}
                         <li>{{exp.responsibilities_4}}</li>
+                      {% endif %}
+
+
+
+                  </ul>
+                </div>
+                {% endfor %}
+
+              </div>
+
+    </section>
+
+
+    <h3 align="center" class="academic-title">Academic background</h3>
+
+    <section  id="academic" class="academic">
+     <div class="col-lg-6 mx-auto">
+                {% for academic_exp in academic %}
+                <div class="academic-item ">
+                  <h4>{{academic_exp.designation}}</h4>
+                      {% if academic_exp.is_present %}
+                        <h5>{{academic_exp.start_date}} - present</h5>
+                    {% else %}
+                        <h5>{{academic_exp.start_date}} - {{academic_exp.end_date}}</h5>
+                    {% endif %}
+
+                  <p><em>{{academic_exp.university}}, {{academic_exp.location}} </em></p>
+                  <ul>
+                      {% if academic_exp.responsibilities_1 is not None %}
+                        <li>{{academic_exp.responsibilities_1}}</li>
+                      {% endif %}
+                      {% if academic_exp.responsibilities_2 %}
+                        <li>{{academic_exp.responsibilities_2}}</li>
+                      {% endif %}
+                      {% if academic_exp.responsibilities_3 %}
+                        <li>{{academic_exp.responsibilities_3}}</li>
+                      {% endif %}
+                      {% if academic_exp.responsibilities_4 %}
+                        <li>{{academic_exp.responsibilities_4}}</li>
                       {% endif %}
 
 
