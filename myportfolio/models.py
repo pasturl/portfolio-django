@@ -45,6 +45,24 @@ class Experience(models.Model):
     responsibilities_3 = models.CharField(max_length=2000,default=None,blank=True)
     responsibilities_4 = models.CharField(max_length=2000,default=None,blank=True)
     company = models.CharField(max_length=200,default=None,blank=True)
+    company_url = models.CharField(max_length=200, default=None, blank=True)
+    location = models.CharField(max_length=200,default=None,blank=True)
+
+
+    def __str__(self):
+        return self.designation
+
+
+class Academic(models.Model):
+    designation = models.CharField(max_length=500)
+    start_date = models.DateField()
+    end_date = models.DateField(blank=True)
+    is_present = models.BooleanField(null=True,blank=True)
+    responsibilities_1 = models.CharField(max_length=2000,default=None,blank=True)
+    responsibilities_2 = models.CharField(max_length=2000,default=None,blank=True)
+    responsibilities_3 = models.CharField(max_length=2000,default=None,blank=True)
+    responsibilities_4 = models.CharField(max_length=2000,default=None,blank=True)
+    university = models.CharField(max_length=200,default=None,blank=True)
     location = models.CharField(max_length=200,default=None,blank=True)
 
 

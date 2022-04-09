@@ -9,9 +9,12 @@ python manage.py inspectdb
 python manage.py createsuperuser
 python manage.py runserver
 python manage.py shell
-python manage.py shell < scripts/add_profile.py
-python manage.py shell < scripts/add_experience.py
-python manage.py shell < scripts/add_projects.py
-python manage.py shell < scripts/add_skills.py
-python manage.py shell < scripts/add_areas.py
+
+python manage.py add_profile --path data/profile.csv
+python manage.py add_areas --path data/areas.csv
+python manage.py add_experiences --path data/experiences.csv
+python manage.py add_academic --path data/academic.csv
+python manage.py add_skills --path data/skills.csv
+python manage.py add_projects --path data/projects.csv
+
 ```

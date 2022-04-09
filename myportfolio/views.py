@@ -2,26 +2,30 @@ from django.shortcuts import render
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, Context
-from .models import Project, Blog, Skill, Connection,Experience,Profile,Area
+from .models import Project, Blog, Skill, Connection,Experience,Profile,Area,Academic
 # Create your views here.
 from .forms import NameForm
 from django.core.mail import send_mail
 
-MAX_EXPERIENCE = 6
+MAX_EXPERIENCE = 10
 def index(request):
     template = loader.get_template("myportfolio/index.html")
     projects = Project.objects.all()
     experiences = Experience.objects.all().order_by('-start_date')[:MAX_EXPERIENCE]
+    academic = Academic.objects.all().order_by('-start_date')[:MAX_EXPERIENCE]
     profile = Profile.objects.all().first()
     areas = Area.objects.all()
     form = NameForm()
-    context = {'projects': projects, 'form': form,'experiences':experiences,'profile':profile,'areas':areas}
+    context = {'projects': projects, 'form': form,'experiences':experiences,'academic':academic,'profile':profile,'areas':areas}
     return HttpResponse(template.render(context, request))
 
 
 def experiences(request):
     return HttpResponse("you are in experience page")
 
+
+def academic(request):
+    return HttpResponse("you are in academic page")
 
 def blogs(request):
     template = loader.get_template("myportfolio/blog.html")
@@ -65,5 +69,6 @@ def resume(request):
     template = loader.get_template("myportfolio/resume.html")
     skills = Skill.objects.all()
     experiences = Experience.objects.all().order_by('-start_date')[:MAX_EXPERIENCE]
-    context = {'skills': skills, 'experiences': experiences}
+    academic = Academic.objects.all().order_by('-start_date')[:MAX_EXPERIENCE]
+    context = {'skills': skills, 'experiences': experiences, 'academic': academic}
     return HttpResponse(template.render(context, request))
