@@ -9,7 +9,9 @@ class Project(models.Model):
 
     title = models.CharField(max_length=500)
     description = models.CharField(max_length=2000)
-    github_link = models.CharField(max_length=2000)
+    github_link = models.CharField(max_length=2000, blank=True, null=True)
+    demo_link = models.CharField(max_length=2000, blank=True, null=True)
+    icon = models.CharField(max_length=2000, blank=True, null=True)
     keywords =models.CharField(max_length=1000, default="")
     image = models.CharField(max_length=1000)
     tech_stack_1 =models.CharField(max_length=1000, default="")

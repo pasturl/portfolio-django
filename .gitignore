@@ -1,5 +1,5 @@
-myportfolio/static/img
-# Django #
+myportfolio/migrations
+# Django
 *.log
 *.pot
 *.pyc

@@ -17,6 +17,8 @@ class Command(BaseCommand):
             b = Project(title=row["title"],
                         description=row["description"],
                         github_link=row["github_link"],
+                        demo_link=row["demo_link"] if row["demo_link"] == "nan" else None,
+                        icon=row["icon"] if row["icon"] == "nan" else None,
                         keywords=row["keywords"],
                         tech_stack_1=row["tech_stack_1"],
                         tech_stack_2=row["tech_stack_2"],
