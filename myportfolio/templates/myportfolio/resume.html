@@ -11,7 +11,7 @@
     <section  id="resume" class="resume">
      <div class="col-lg-6 mx-auto">
                 {% for exp in experiences %}
-                <div class="resume-item ">
+                <div class="resume-item">
                   <h4>{{exp.designation}}</h4>
                       {% if exp.is_present %}
                         <h5>{{exp.start_date}} - present</h5>
@@ -40,8 +40,8 @@
                   </ul>
                 </div>
                 {% endfor %}
-
               </div>
+
 
     </section>
 
@@ -51,7 +51,7 @@
     <section  id="academic" class="academic">
      <div class="col-lg-6 mx-auto">
                 {% for academic_exp in academic %}
-                <div class="academic-item ">
+                <div class="academic-item">
                   <h4>{{academic_exp.designation}}</h4>
                       {% if academic_exp.is_present %}
                         <h5>{{academic_exp.start_date}} - present</h5>
@@ -79,7 +79,6 @@
                   </ul>
                 </div>
                 {% endfor %}
-
               </div>
 
     </section>

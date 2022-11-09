@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
 html {
-zoom: 150%;
+zoom: 100%;
 }
 @viewport {
   width: device-width;
@@ -17,7 +17,7 @@ zoom: 150%;
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 100%;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -196,6 +196,7 @@ body {
 
 .profile{
   text-align: center;
+  padding-top: 4%;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -235,6 +236,7 @@ body
     margin-top: 3em;
     margin-bottom: 1em;
     text-align: center;
+    font-weight: bold
 
 }
 
@@ -297,16 +299,17 @@ width:120px;
 }
 
 .resume-title {
-
+  font-weight: bold;
   margin-top: 3em;
   margin-bottom: 3em;
+  font-size: 2.5em;
 
 }
 .projects-title {
-
-  margin-top: 30px;
+  margin-top: 3em;
   margin-bottom: 3em;
-
+  font-weight: bold;
+  font-size: 2.5em;
 }
 
 .resume .resume-item {
@@ -363,13 +366,13 @@ width:120px;
 }
 
 .academic-title {
-
-  margin-top: 4em;
+  font-weight: bold;
+  margin-top: 3em;
   margin-bottom: 3em;
-
+  font-size: 2.5em;
 }
 
-academic .academic-item {
+.academic .academic-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
   border-left: 2px solid #0563bb;
@@ -425,6 +428,7 @@ academic .academic-item {
     width: 100%;
     height: 15em;
     object-fit: cover;
+    border-radius: 25px;
 }
 
 .icon-bar a {
@@ -518,7 +522,8 @@ academic .academic-item {
 
 #card-vertical{
     width: 20rem;
-    height: 30rem;
+    height: 35rem;
+    border-radius: 25px;
     align-items: center;
   justify-content: center;
 }
@@ -536,22 +541,37 @@ academic .academic-item {
 
 #card-horizontal {
     margin-bottom: 3em;
+    border-radius: 25px;
 }
 
 #card-title-vertical{
-    height: 3rem
+    height: 3rem;
+    font-weight: bold;
 }
 #card-text-vertical{
-    height: 5rem
+    height: 10rem
 }
 #card-img-horizontal{
     width: 100%;
     height: 100%;
+    border-radius: 25px;
+}
+#card-title-horizontal{
+    font-weight: bold;
+    font-size: 2em;
 }
 #card-text-horizontal{
-    height: 5rem
+    height: 5rem;
 }
 
 #card-title-areas{
     margin-top: 1em;
+    font-weight: bold
+}
+
+.blogs-title {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  font-weight: bold;
+
 }

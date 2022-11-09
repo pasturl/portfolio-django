@@ -3,9 +3,10 @@
 {% block page_content %}
 {% load static %}
 <link rel="stylesheet" href="{%  static  'css/style.css'  %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<div class="col-md-8 offset-md-2">
+<div class="col-md-10 offset-md-1">
     <h3 align="center" class="projects-title">My projects</h3>
   {% for project in projects %}
 <div class="card" id="card-horizontal">
@@ -16,22 +17,26 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{project.title}}</h5>
+        <h5 class="card-title" id="card-title-horizontal">{{project.title}}</h5>
         <p class="card-text" id="card-text-horizontal">{{project.description}}</p>
-        <div class="project-tech justify-content-left">
+        <div>
+          <div style="padding-top:1em">
+            {% if project.github_link %}
+              <a href={{project.github_link}} target="_blank"><img src="{{ baseUrl }}img/github.svg" width="48" height="48" style="margin-right:1em">Code repository</a>
+            {% endif %}
+          </div>
+          <div  style="padding-top:1em">
+            {% if project.demo_link %}
+              <a href={{project.demo_link}} target="_blank"><img src="{{ baseUrl }}img/{{project.icon}}" width="48" height="48" style="margin-right:1em">Web page</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="project-tech justify-content-left" style="padding-top:1em">
+          <h5  style="margin-bottom:1em;  font-size: 1.6rem;">Technological stack</h5>
           <img src={{project.tech_stack_1}}>
           <img src={{project.tech_stack_2}}>
           <img src={{project.tech_stack_3}}>
           <img src={{project.tech_stack_4}}>
-        </div>
-        <div>
-        <br>
-        {% if project.github_link %}
-          <a href={{project.github_link}} class="github" target="_blank"><i class="fa fa-github" style="font-size:2em"></i></a>
-        {% endif %}
-        {% if project.demo_link %}
-          <a href={{project.demo_link}} target="_blank"><img src="{{ baseUrl }}img/{{project.icon}}" width="32" height="32"></a>
-        {% endif %}
         </div>
       </div>
     </div>

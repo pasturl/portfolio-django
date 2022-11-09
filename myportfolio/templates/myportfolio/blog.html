@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block page_content %}
+{% load static %}
+<link rel="stylesheet" href="{%  static  'css/style.css'  %}">
 
-<div class="col-md-8 offset-md-2">
-    <h1>My blogs</h1>
+<div class="col-md-10 offset-md-1">
+    <h3 align="center" class="blogs-title">My blogs</h3>
     <hr>
     {% for blog in blogs %}
     <h2><a target="_blank" href={{ blog.link}}>{{ blog.title }}</a></h2>
