@@ -27,7 +27,8 @@ SECRET_KEY = '^tirljss^l-h%6x6=827d4hj)tg^q-v!mva8%u1^a*dg@g!1mf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lucas-pastur-romay.herokuapp.com','lucas-pastur-portfolio.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['lucas-pastur-romay.herokuapp.com','lucas-pastur-portfolio.herokuapp.com',
+                 '127.0.0.1', 'ec2-3-250-103-164.eu-west-1.compute.amazonaws.com', '3.250.103.164']
 
 
 # Application definition

@@ -6,6 +6,9 @@ from .models import Project, Blog, Skill, Connection,Experience,Profile,Area,Aca
 # Create your views here.
 from .forms import NameForm
 from django.core.mail import send_mail
+from os import listdir
+from os.path import isfile, join
+
 
 MAX_EXPERIENCE = 10
 def index(request):
@@ -26,6 +29,15 @@ def experiences(request):
 
 def academic(request):
     return HttpResponse("you are in academic page")
+
+
+def ai_art_gallery(request):
+    template = loader.get_template("myportfolio/ai_art_gallery.html")
+    ai_art_gallery_img_path = "myportfolio/static/img/ai_art_gallery"
+    paints_paths = [f for f in listdir(ai_art_gallery_img_path) if isfile(join(ai_art_gallery_img_path, f))]
+    context = {'paints': paints_paths}
+    return HttpResponse(template.render(context, request))
+
 
 def blogs(request):
     template = loader.get_template("myportfolio/blog.html")

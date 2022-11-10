@@ -1,0 +1,4 @@
+https://www.programink.com/django-tutorial/django-deployment.html
+ssh -i aws-password-personal.pem ubuntu@ec2-3-250-103-164.eu-west-1.compute.amazonaws.com
+
+scp -i *.pem web_django.zip ubuntu@ec2-3-250-103-164.eu-west-1.compute.amazonaws.com:~/
