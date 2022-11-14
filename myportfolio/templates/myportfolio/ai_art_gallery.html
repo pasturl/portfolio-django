@@ -16,13 +16,13 @@
 {% static "" as baseUrl %}
 <div class="container">
 	<h3 align="center" class="ai-gallery-title">Images created using Stable diffusion</h3>
-    <div class="row">
+    <div class="row no-gutters">
 	{% for image in paints %}
 		{% if forloop.first %}
 			<tr>
 		{% endif %}
 		<td>
-		  <img src="{{ baseUrl }}img/ai_art_gallery/{{ image }}" class="img-responsive img-thumbnail" style="margin:1em"/>
+		  <img src="{{ baseUrl }}img/ai_art_gallery/{{ image }}" class="img-responsive img-thumbnail" style="margin-bottom:2em;margin-right:2em"/>
 		</td>
 		{% if forloop.last %}
 			</tr>

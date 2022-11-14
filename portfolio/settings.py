@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import  os
-import django_heroku
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,8 +26,7 @@ SECRET_KEY = '^tirljss^l-h%6x6=827d4hj)tg^q-v!mva8%u1^a*dg@g!1mf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['52.214.102.112',
-                 '127.0.0.1', 'ec2-3-250-103-164.eu-west-1.compute.amazonaws.com', '3.250.103.164', 'eb-django-app-dev.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['www.lucas-pastur-romay.com', '127.0.0.1']
 
 
 # Application definition
@@ -133,18 +131,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'myportfolio/static'),
 )
-django_heroku.settings(locals())
-# ie if Heroku server
-if 'DATABASE_URL' in os.environ:
-    import dj_database_url
-    DATABASES = {'default': dj_database_url.config()}
-else:
-    # Database
-    # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'db.sqlite3',
-        }
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
+}
 
