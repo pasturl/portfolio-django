@@ -8,7 +8,7 @@ django-split-settings==0.2.5
 enum34==1.1.6
 gunicorn==20.0.4
 Pillow==8.0.1
-psycopg2==2.8.6
+psycopg2-binary==2.9.3
 pycparser==2.17
 pytz==2020.4
 six==1.10.0
@@ -17,6 +17,4 @@ waitress==1.4.4
 whitenoise==5.2.0
 wincertstore==0.2
 dj-database-url
-psycopg2
-django-heroku
 pandas

@@ -7,7 +7,8 @@ python manage.py makemigrations myportfolio
 python manage.py migrate
 python manage.py inspectdb 
 python manage.py createsuperuser
-python manage.py runserver
+python manage.py runserver 
+python3 manage.py runserver 0.0.0.0:8000
 python manage.py shell
 
 python manage.py add_profile --path data/profile.csv
