@@ -1,4 +1,5 @@
 myportfolio/migrations
+aws
 # Django
 *.log
 *.pot
