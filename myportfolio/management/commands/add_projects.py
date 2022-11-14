@@ -16,9 +16,9 @@ class Command(BaseCommand):
         for index, row in df.iterrows():
             b = Project(title=row["title"],
                         description=row["description"],
-                        github_link=row["github_link"] if row["github_link"] == "nan" else None,
-                        demo_link=row["demo_link"] if row["demo_link"] == "nan" else None,
-                        icon=row["icon"] if row["icon"] == "nan" else None,
+                        github_link=None if row["github_link"] == "nan" else row["github_link"],
+                        demo_link=None if row["demo_link"] == "nan" else row["demo_link"],
+                        icon=None if row["icon"] == "nan" else row["icon"],
                         keywords=row["keywords"],
                         tech_stack_1=row["tech_stack_1"],
                         tech_stack_2=row["tech_stack_2"],

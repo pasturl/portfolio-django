@@ -35,6 +35,7 @@ def ai_art_gallery(request):
     template = loader.get_template("myportfolio/ai_art_gallery.html")
     ai_art_gallery_img_path = "myportfolio/static/img/ai_art_gallery"
     paints_paths = [f for f in listdir(ai_art_gallery_img_path) if isfile(join(ai_art_gallery_img_path, f))]
+    paints_paths.sort()
     context = {'paints': paints_paths}
     return HttpResponse(template.render(context, request))
 
